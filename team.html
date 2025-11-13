@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LigersNext - TEAM紹介</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- 共通ヘッダー -->
+    <header class="header">
+      <div class="ln-icon">LN</div>
+      <nav class="nav">
+        <!-- ハンバーガーアイコン -->
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="menu-icon">
+          <a href="index.html">TOP</a>
+          <a href="rules.html">規約</a>
+          <a href="team.html">TEAM紹介</a>
+          <a href="players.html">選手紹介</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </nav>
+    </header>
+
+    <!-- チーム紹介セクション -->
+    <section class="team-section">
+      <div class="team-container">
+        <h1 class="team-title">チーム紹介</h1>
+
+        <div class="team-history">
+          <h2>チームの歴史</h2>
+          <p>
+            LigersNextは2021年12月に設立され、平均年齢は24歳と若い年代で構成されているチームです。
+            主に千葉県の千葉市、四街道市、八千代市などで活動しています。
+          </p>
+        </div>
+
+        <div class="team-spirit">
+          <h2>チームの雰囲気</h2>
+          <p>
+            チームはアットホームな雰囲気で、選手同士のコミュニケーションが活発です。
+            試合では全力で挑み、楽しむことをモットーに野球をしています。
+            楽しく野球をしたい方は大募集です！
+          </p>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const menuIcon = document.querySelector(".menu-icon");
+
+    hamburger.addEventListener("click", () => {
+      menuIcon.classList.toggle("active");
+    });
+  });
+</script>
