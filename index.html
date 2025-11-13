@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LigersNext</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="ln-icon">LN</div>
+      <nav class="nav">
+        <!-- ハンバーガーアイコン -->
+        <div class="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+
+        <div class="menu-icon">
+          <a href="index.html">TOP</a>
+          <a href="rules.html">規約</a>
+          <a href="team.html">TEAM紹介</a>
+          <a href="players.html">選手紹介</a>
+          <a href="contact.html">お問い合わせ</a>
+        </div>
+      </nav>
+    </header>
+
+    <section class="hero fade-in">
+      <div class="overlay"></div>
+      <div class="hero-content">
+        <h1 class="fade-in-up delay-1">
+          <img
+            src="images/LigersNext.png"
+            alt="LigersNext"
+            class="hero-logo shine"
+          />
+        </h1>
+        <p class="jp-text fade-in-up delay-2">
+          昨日の自分たちを超えていけ。<br />
+        </p>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const hamburger = document.querySelector(".hamburger");
+    const menuIcon = document.querySelector(".menu-icon");
+
+    hamburger.addEventListener("click", () => {
+      menuIcon.classList.toggle("active");
+    });
+  });
+</script>
