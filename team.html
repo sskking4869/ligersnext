@@ -49,6 +49,69 @@
             野球を楽しくプレーしたい方は、大歓迎です！
           </p>
         </div>
+        <div class="team-record">
+            <div class="record-controls">
+                <h3>戦績</h3>
+                <label for="year-select">年代:</label>
+                <select id="year-select" onchange="filterRecords(this.value)">
+                    <option value="" selected>すべて</option>
+                    <option value="2025">2025年</option>
+                    <option value="2024">2024年</option>
+                    <option value="2023">2023年</option>
+                    <option value="2022">2022年</option>
+                    <option value="2021">2021年</option>
+               </select>
+            </div>
+            
+             <table id="match-records">
+              <thead>
+                <tr>
+                  <th>対戦日時</th>
+                  <th>対戦名</th>
+                  <th>得点</th>
+                  <th>勝敗</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-year="2025">
+                  <td>2025/05/12</td>
+                  <td>マリンリーグ</td>
+                  <td>7 - 5</td>
+                  <td>勝利</td>
+                </tr>
+                <tr data-year="2024">
+                  <td>2024/05/12</td>
+                  <td>マリンリーグ</td>
+                  <td>7 - 5</td>
+                  <td>勝利</td>
+                </tr>
+                <tr data-year="2024">
+                  <td>2024/04/28</td>
+                  <td>マリンリーグ</td>
+                  <td>2 - 8</td>
+                  <td>敗北</td>
+                </tr>
+                <tr data-year="2024">
+                  <td>2024/04/14</td>
+                  <td>マリンリーグ</td>
+                  <td>4 - 4</td>
+                  <td>引き分け</td>
+                </tr>
+                <tr data-year="2023">
+                  <td>2023/11/05</td>
+                  <td>マリンリーグ</td>
+                  <td>10 - 3</td>
+                  <td>勝利</td>
+                </tr>
+                <tr data-year="2023">
+                  <td>2023/10/22</td>
+                  <td>マリンリーグ</td>
+                  <td>5 - 6</td>
+                  <td>敗北</td>
+                </tr>
+             </tbody>
+           </table>
+        </div>
       </div>
     </section>
   </body>
@@ -63,4 +126,23 @@
       menuIcon.classList.toggle("active");
     });
   });
+  /**
+   * 年代に基づいて戦績の行をフィルターする関数
+   * @param {string} selectedYear 選択された年代（例: '2024' または ''）
+   */
+  function filterRecords(selectedYear) {
+      const rows = document.querySelectorAll('#match-records tbody tr');
+
+      rows.forEach(row => {
+          const rowYear = row.getAttribute('data-year');
+
+          if (selectedYear === '' || rowYear === selectedYear) {
+              // 'すべて'が選択されたか、年代が一致する場合
+              row.style.display = ''; // 行を表示
+          } else {
+              // 年代が一致しない場合
+              row.style.display = 'none'; // 行を非表示
+          }
+      });
+  }
 </script>
